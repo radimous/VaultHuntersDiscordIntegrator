@@ -53,7 +53,7 @@ public class CreateItemsHandler {
                 ItemStack innerStack = filterItems.getStackInSlot(i);
                 if (!innerStack.isEmpty()) {
                     if (innerStack.getItem() instanceof FilterItem) { // this branch is from VaultFilters recursive summary
-                        MutableComponent firstComp = Components.literal("- ").append(innerStack.getHoverName()).append(" ").withStyle(ChatFormatting.GRAY);
+                        MutableComponent firstComp = Components.literal("\\- ").append(innerStack.getHoverName()).append(" ").withStyle(ChatFormatting.GRAY);
                         List<Component> innerSummary = filterSummary(innerStack);
                         boolean isFst = true;
                         for (Component component : innerSummary) {
@@ -61,7 +61,7 @@ public class CreateItemsHandler {
                             isFst = false;
                         }
                     } else {
-                        list.add(Components.literal("- ").append(innerStack.getHoverName()).withStyle(ChatFormatting.GRAY));
+                        list.add(Components.literal("\\- ").append(innerStack.getHoverName()).withStyle(ChatFormatting.GRAY));
                     }
                 }
             }
@@ -78,7 +78,7 @@ public class CreateItemsHandler {
                     ItemAttribute attribute = ItemAttribute.fromNBT(compound);
                     if (attribute != null) {
                         boolean inverted = compound.getBoolean("Inverted");
-                        list.add(Components.literal("- ").append(format(attribute, inverted)));
+                        list.add(Components.literal("\\- ").append(format(attribute, inverted)));
                     }
                 }
             }
