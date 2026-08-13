@@ -57,7 +57,7 @@ public class CreateItemsHandler {
                         List<Component> innerSummary = filterSummary(innerStack);
                         boolean isFst = true;
                         for (Component component : innerSummary) {
-                            list.add((isFst ? firstComp : Components.literal("   ")).append(component).withStyle(ChatFormatting.GRAY));
+                            list.add((isFst ? firstComp : Components.literal("   " /*discord deletes normal spaces in embeds*/)).append(component).withStyle(ChatFormatting.GRAY));
                             isFst = false;
                         }
                     } else {
